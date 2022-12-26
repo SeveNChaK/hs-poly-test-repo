@@ -31,7 +31,7 @@ prop_mySin v = mySin v `nearlyEqual` sin v
 
 unit_myCos = do
     myCos 0.0 @?=~ 1.0
-    myCos pi @?=~ 1.0
+    myCos pi @?=~ (-1.0)
     myCos (pi / 2) @?=~ 0.0
 
 prop_myCos v = myCos v `nearlyEqual` cos v
@@ -55,7 +55,7 @@ unit_isDateCorrect = do
 prop_isDateCorrect year =
     False === isDateCorrect 30 02 year
         .&&. False === isDateCorrect 31 04 year
-        .&&. False === isDateCorrect 31 07 year
+        .&&. False === isDateCorrect 31 09 year
 
 unit_myPow = do
     myPow 23 1 @?= 23
